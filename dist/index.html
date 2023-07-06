@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Log out Auth</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="flex justify-center w-full items-center h-screen font-tahoma border-solid border-2"
+    >
+      <form class="flex flex-col max-w-sm w-11/12" id="form" >
+        <h1>Welcome and Sign in</h1>
+
+        <label class="block">
+          <span class="text-md font-medium text-slate-700">Name</span>
+          <input
+            type="text"
+            class="border border-slate-400 text-sm rounded-md bg-white outline-none focus:outline-none focus:border-indigo-700 focus:ring-1 focus:ring-sky-300 shadow-none mt-1 block w-full px-3 py-2" id="name"
+          />
+        </label>
+
+        <label class="block mt-4">
+          <span class="text-md font-medium text-slate-700">Email</span>
+          <input
+            type="text"
+            class="border border-slate-400 text-sm rounded-md outline-none focus:outline-none focus:border-indigo-700 focus:ring-1 focus:ring-sky-300 shadow-none invalid:border-red-500 mt-1 block w-full px-3 py-2" id="email"
+          />
+        </label>
+
+        <div class="flex justify-between">
+          <button class="border border-green-400 bg-green-300 px-2 py rounded-md"id="signin-btn">Sign up</button>
+          <buton>Sign in</buton>
+        </div>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
