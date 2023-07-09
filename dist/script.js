@@ -1,18 +1,19 @@
 const form = document.querySelector('form')
 const input = document.querySelector('input')
+const para = document.querySelector('p')
 
-
-form.addEventListener("submit" ,function(e){
-    e.preventDefault();
+// prevent form submission
+form.addEventListener('submit', function(e){
+    e.preventDefault()
     checkValue()
 })
 
 function checkValue(){
-    let name=document.getElementById("name").value;
-    let email = document.getElementById("email").value
+    let name = document.querySelector("#name").value
+    let email = document.querySelector("#email").value
 
     if(!name){
-        // alert("Please enter your Name");
-        input.classList.add("invalid")
+        para.classList.add("error")
+        // alert("jjj")
     }
 }
