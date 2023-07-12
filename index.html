@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-blue-400">
+    <div class="flex justify-center w-full items-center h-screen font-tahoma">
+      <form
+        id="auth-form"
+        class="flex flex-col bg-white max-w-sm w-11/12 border border-sky-500 rounded-md p-3 shadow-blue-500/50"
+      >
+        <div id="user-message"
+          class="text-center sm:text-sm md:text-base border border-slate-700"
+        >
+          <p class="text-green-800 font-medium">You have successfully create an account</p>
+        </div>
+
+        <div class="mt-6">
+          <h1 class="text-xl font-semibold">
+            Welcome and sign in to your account
+          </h1>
+          <p class="mb-2 mt-1">
+            if dont have an account?
+            <a class="underline text-blue-600" href="#">Sign up</a> for free
+          </p>
+        </div>
+
+        <label class="block">
+          <span class="block text-md font-medium text-slate-700"></span>Email
+          <input
+            type="text"
+            id="user-name"
+            class="border border-slate-500 rounded-md px-3 py-2 w-full outline-none focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" autocomplete="off"
+          />
+          <p class="text-sm">Please provide a valid email address.</p>
+        </label>
+
+        <label class="block">
+          <span class="block text-md font-medium text-slate-700">Password</span>
+          <input
+            type="password"
+            id="user-password"
+            class="border border-slate-500 rounded-md px-3 py-2 w-full outline-none focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" autocomplete="off"
+          />
+          <p class="text-sm">Please provide a valid email address.</p>
+        </label>
+        <button
+          type="submit"
+          class="text-white border bg-blue-500 hover:bg-blue-400 px-3 py-1.5 mt-3 rounded-md w-full block"
+          id="LogInButton"
+        >
+          Sign in
+        </button>
+      </form>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGg7PP_ZefeYmeto0wU-ppbtKVeIi7mFo",
+        authDomain: "user-authentication-ba4bd.firebaseapp.com",
+        projectId: "user-authentication-ba4bd",
+        storageBucket: "user-authentication-ba4bd.appspot.com",
+        messagingSenderId: "502418783755",
+        appId: "1:502418783755:web:969b33d2138aaf3461110e",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const userEmail = document.querySelector("#user-email");
+      const userPassword = document.querySelector("#user-password");
+      const form = document.querySelector("#auth-form");
+      const signUpButton = document.querySelector("#signUpButton");
+      const signInButton = document.querySelector("#signInButton");
+      const signOutButton = document.querySelector("#signOutButton");
+
+      const secretContent = document.querySelector("#user-message");
+
+      
+      form.addEventListener("submit", function (e) {
+        preventDefault();
+      });
+
+      secretContent.style.display = "none"
+
+
+    </script>
+    <!-- <script src="./script.js"></script> -->
+  </body>
+</html>
